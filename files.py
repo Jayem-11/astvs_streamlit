@@ -9,3 +9,12 @@ def get_files_with_blob(directory, blob):
     files = glob.glob(blob)
 
     return files
+
+
+def delete_files(files):
+    for file in files:
+        # Check if it is a file (not a directory)
+        if os.path.isfile(file):
+            os.remove(file)  # Delete the file
+
+

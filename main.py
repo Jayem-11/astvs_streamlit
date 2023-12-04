@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 import json
 from split import split_video
-from files import get_files_with_blob
+from files import get_files_with_blob, delete_files
 
 # =========================================================================================
 
@@ -74,4 +74,11 @@ if predict_bt:
     st.write("""### Summary""")
     st.success(summary)
 
+    # Call the function
     st.balloons()
+
+refresh = st.button('refresh')
+
+if refresh:
+    
+    delete_files(files)
